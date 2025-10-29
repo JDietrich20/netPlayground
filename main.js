@@ -1,28 +1,85 @@
-import * as THREE from 'three';
+const projects = [
+    {
+        url: "#",
+        title: "Project Alpha",
+        thumbnail: "images/Profile.png",
+        category: "Web Development",
+        description: "A cutting-edge web application that revolutionizes user interaction.",
+    }, 
+    {
+        url: "#",
+        title: "Project Beta",
+        thumbnail: "images/Profile.png",
+        category: "Mobile Development",
+        description: "An innovative mobile app that enhances productivity on the go.",
+    }, 
+    {
+        url: "#",
+        title: "Project Gamma",
+        thumbnail: "images/Profile.png",
+        category: "Data Science",
+        description: "A data analysis tool that provides deep insights through machine learning.",
+    },
+    {
+        url: "#",
+        title: "Project Delta",
+        thumbnail: "images/Profile.png",
+        category: "Game Development",
+        description: "An immersive gaming experience with stunning graphics and engaging gameplay.",
+    },
+    {
+        url: "#",
+        title: "Project Epsilon",
+        thumbnail: "images/Profile.png",
+        category: "Artificial Intelligence",
+        description: "An AI-powered solution that automates complex tasks with ease.",
+    },
+    {
+        url: "#",
+        title: "Project Zeta",
+        thumbnail: "images/Profile.png",
+        category: "Cybersecurity",
+        description: "A robust security platform that protects against modern cyber threats.",
+    }
+];
 
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+const projectsContainer = document.querySelector(".projects-container");
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
-//renderer.setAnimationLoop( animate );
-document.body.appendChild( renderer.domElement );
+const displayProjects = (urlValue, titleValue, categoryValue, thumbnailValue, descriptionValue) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
 
-const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-const cube = new THREE.Mesh( geometry, material );
-scene.add( cube );
+    const a = document.createElement("a");
+    a.setAttribute("href", urlValue);
 
-camera.position.z = 5;
+    const category = document.createElement("div");
+    category.classList.add("category");
+    category.innerHTML = categoryValue;
 
-function animate() {
-    requestAnimationFrame( animate );
+    const thumbnail = document.createElement("img");
+    thumbnail.setAttribute("src", thumbnailValue);
 
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+    const title = document.createElement("h3");
+    title.classList.add("title");
+    title.innerHTML = titleValue;
 
-    renderer.render( scene, camera );
+    const description = document.createElement("div");
+    description.classList.add("description");
+    description.innerHTML = descriptionValue;
 
+
+    projectsContainer.appendChild(card);
+    card.appendChild(a);
+    card.appendChild(category);
+    card.appendChild(thumbnail);
+    card.appendChild(title);
+    card.appendChild(description);
 }
 
-animate();
+const loadProjects = () => {
+    projects.forEach(project => {
+        displayProjects(project.url, project.title, project.category, project.thumbnail, project.description);
+    });
+}
+
+loadProjects();
