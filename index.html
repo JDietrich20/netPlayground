@@ -8,6 +8,7 @@
     <link rel = "stylesheet" href = "resources/css/index.css">
     <link rel="icon" type="image/png" href="images/Icon.webp">
 </head>
+
 <body>
   <nav>
     <ul>
@@ -23,7 +24,7 @@
       <img height = "250px" width = "250px" src = "images/Profile.png">
       <div class = "text-container">
         <h1>Julianna Dietrich</h1>
-        <p>Hi there :D, Welcome to my <strong> portfolio!</strong></p>
+        <p>Hi there :D, Welcome to my <strong> website!</strong></p>
         <div class="social-links">
           <a href ="https://www.instagram.com/neko.bituin" target="_blank" class = "cta-button">
             <img src="images/instagram1.webp" alt="Instagram logo">
@@ -59,7 +60,21 @@
       
     </div>
 
-    <script src="main.js"></script></script>
+<div id="projectModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h3 id="modalTitle"></h3>
+    <img id="modalImage" alt="Project Image">
+    <p id="modalDescription" class="modal-description"></p>
+    <a id="modalLink" href="#" target="_blank" class="modal-link">View Project</a>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
+
+    <!--<script src="main.js"></script></script>-->
     <!--
     <div class = "grid-container">
       <img style= "grid-area: img-1" src="images/Profile.png">
@@ -75,11 +90,14 @@
   <section id="notes">
     <h2> Notes </h2>
     <details>
-      <summary> Future Plans for this Portfolio</summary>
+      <summary> Future Plans for this Site:</summary>
       <p>
         * Each project will have a dedicated page highlighting the tools, process, and experiences behind it, including screenshots and step-by-step insights.<br>
         * Projects can be sorted by category, tool, or date for easy browsing. <br>
         * I plan to add interactive elements and animations to make the site more engaging and dynamic. :D <br>
+        * Added Dark mode and better colors/styling!<br>
+        * A Skills/Hobbies section and/or skills tags.<br>
+        * A downloadable resume/CV.<br>
         * And more ^o^!
       </p>
     </details>
