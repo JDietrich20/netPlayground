@@ -4,7 +4,7 @@ const projects = [
     title: "Responsible AI Hub Product Design",
     date: "September 2025 — Present",
     thumbnail: "images/RAI.png",
-    category: "Art/Tech",
+    category: "Design/Software Development",
     description:
       "Leading the <strong>design</strong>, <strong>development</strong>, and <strong>implementation</strong> of interactive visualizations to communicate AI research findings effectively to visitors at Santa Clara University.",
     status: "In Progress",
@@ -15,7 +15,7 @@ const projects = [
     title: "Robotic Service Animal Design",
     date: "September 2025 — Present",
     thumbnail: "images/RSA.png",
-    category: "Robotics/Design",
+    category: "Design",
     description:
       "Designing assistive robotic service animals with a focus on <strong>functionality</strong>, <strong>user experience</strong>, and <strong> user interaction</strong>, enhancing accessibility and usability for end-users.",
     status: "In Progress",
@@ -31,17 +31,6 @@ const projects = [
       "Creating an ongoing fancomic series featuring original artwork and <strong>storytelling</strong>, shared with an online community to engage and inspire readers.",
     status: "Ongoing",
     tools: [" Procreate ", " Adobe Illustrator ", " Adobe After Effects "],
-  },
-  {
-    url: "#",
-    title: "2D-to-3D Character Modeling",
-    date: "September 2025 — Present",
-    thumbnail: "images/TwoDee.png",
-    category: "3D Modeling",
-    description:
-      "Transforming 2D character concepts into fully textured 3D models with <strong>Nomad Sculpt</strong> and <strong>Procreate</strong> while maintaining artistic integrity and production-ready quality.",
-    status: "Ongoing",
-    tools: [" Nomad Sculpt ", " Procreate "],
   },
   {
     url: "https://github.com/JDietrich20/GenAiBias_Viz",
@@ -62,6 +51,28 @@ const projects = [
     ],
   },
   {
+    url: "https://github.com/JDietrich20/RayTracing",
+    title: "Explorations in Computer Graphics",
+    date: "September 2025 — Present",
+    thumbnail: "images/CG.png",
+    category: "Computer Graphics",
+    description:
+      "I am combining <strong>self-directed learning</strong> with a computer graphics course by building a <strong>ray tracer in C++</strong> using <em>Ray Tracing in One Weekend</em> and other tutorials. I plan to also explore <strong>ray casting</strong>, <strong>marching cubes</strong>, and other <strong>3D graphics experiments</strong> to strengthen my skills in <strong>rendering and shading techniques</strong>, <strong>C++</strong>, and <strong>linear algebra</strong>!",
+    status: "Ongoing",
+    tools: [" C++ ", " Python ", " WebGL ", " Three.js "],
+  },
+  {
+    url: "#",
+    title: "2D-to-3D Character Modeling",
+    date: "September 2025 — Present",
+    thumbnail: "images/TwoDee.png",
+    category: "3D Modeling",
+    description:
+      "Transforming 2D character concepts into fully textured 3D models with <strong>Nomad Sculpt</strong> and <strong>Procreate</strong> while maintaining artistic integrity and production-ready quality.",
+    status: "Ongoing",
+    tools: [" Nomad Sculpt ", " Procreate "],
+  },
+  {
     url: "https://kaoki.com/project/koons-ruins/",
     title: "3D Reconstruction of Koons Ruins",
     date: "May 2025 — July 2025",
@@ -79,7 +90,7 @@ const projects = [
     thumbnail: "images/OnlineBook.png",
     category: "Software Development",
     description:
-      "Developed a <strong>full-stack</strong> bookstore management system in <strong>C++</strong> and <strong>Qt</strong> using MVC architecture, enabling users to browse, purchase, and manage books efficiently.",
+      "Worked in a small team to develop a <strong>graphical user interface</strong> for an online bookstore in <strong>C++</strong> and <strong>Qt</strong>. Using the MVC architecture, we seamlessly enabled users and admins to browse, purchase, and manage books from a bookstore's database.",
     status: "Completed",
     tools: [" C++ ", " Qt ", " REST APIs "],
   },
@@ -90,7 +101,7 @@ const projects = [
     thumbnail: "images/Balance.webp",
     category: "UX/UI Design",
     description:
-      "Designed a mobile application to support healthy habits and burnout management through <strong>UX research</strong>, prototyping in <strong>Figma</strong>, and usability testing.",
+      "Worked in a small team to design a mobile application to support healthy habits and burnout management through <strong>UX research</strong>, prototyping in <strong>Figma</strong>, and usability testing.",
     status: "Completed",
     tools: [" Figma ", " Prototyping ", " Wireframes "],
   },
@@ -112,7 +123,7 @@ const projects = [
     thumbnail: "images/PeerTap.png",
     category: "Mobile App Development",
     description:
-      "Developed a <strong>Flutter-based</strong> mobile application for digital business card exchange, integrating interactive UI/UX and animated branding elements created with <strong>After Effects</strong>, <strong>Adobe Illustrator</strong> and <strong>Lottie</strong>.",
+      "Worked in a small team to develop a <strong>Flutter-based</strong> mobile application for digital business card exchange. Lead the integration of the front-end, implementing interactive UI/UX and animated branding elements created with <strong>After Effects</strong>, <strong>Adobe Illustrator</strong> and <strong>Lottie</strong>.",
     status: "Completed",
     tools: [
       " Flutter ",
@@ -140,7 +151,7 @@ const projects = [
     thumbnail: "images/MultiModalApp.png",
     category: "Mobile App Development",
     description:
-      "Built a <strong>Flutter-based</strong> mobile application to analyze multi-modal social media interactions, enabling controlled experiments and behavioral data collection.",
+      "Collaborated with another student developer to build a <strong>Flutter-based</strong> mobile application to analyze multi-modal social media interactions for research purposes, enabling controlled experiments and behavioral data collection.",
     status: "Completed",
     tools: [" Flutter ", " Firebase ", " Dart "],
   },
