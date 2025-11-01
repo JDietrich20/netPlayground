@@ -54,7 +54,7 @@ const projects = [
     url: "https://github.com/JDietrich20/RayTracing",
     title: "Explorations in Computer Graphics",
     date: "September 2025 — Present",
-    thumbnail: "images/CG.png",
+    thumbnail: "images/RayTrace.png",
     category: "Computer Graphics",
     description:
       "I am combining <strong>self-directed learning</strong> with a computer graphics course by building a <strong>ray tracer in C++</strong> using <em>Ray Tracing in One Weekend</em> and other tutorials. I plan to also explore <strong>ray casting</strong>, <strong>marching cubes</strong>, and other <strong>3D graphics experiments</strong> to strengthen my skills in <strong>rendering and shading techniques</strong>, <strong>C++</strong>, and <strong>linear algebra</strong>!",
