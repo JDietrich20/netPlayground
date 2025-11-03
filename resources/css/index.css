@@ -8,6 +8,8 @@
     --background-color: #ffffff;
     --category-color: #ef74ba;
     --text-color: #212121;
+    --backgroundP-color:#e5edff;
+    --backgroundT-color:#ffe7f0;
     /*Base color, color1, color2, color3*/
     --border-radius: 8px;
 }
@@ -217,6 +219,92 @@ section#notes p{
     margin-bottom: 20px;
     line-height: 1.5;
 }
+
+
+.skills {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  position: relative;
+}
+
+
+.skills-wrapper {
+  display: flex;
+  flex-direction: row; /* side-by-side layout */
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0rem; 
+  flex-wrap: wrap; /* allows stacking on small screens */
+}
+
+/* Divider */
+.skills::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: var(--category-color); /* divider color */
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.skills h5 {
+    color: var(--tertiary-color);
+    font-size: 1.2rem;
+    margin-bottom: .5em;
+}
+
+.skills h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: .5em;
+}
+
+button {
+    border: none;
+    padding: 8px 16px;
+    margin: 0 5px 16px 0;
+    border-radius: 20px;
+}
+
+.skills button{
+  border: 2px solid;
+  border-radius: 10px;
+}
+
+.dev{
+  border-color: var(--primary-color);
+  color:var(--primary-color);
+  background-color: var(--backgroundP-color);
+}
+
+.tools{
+  border-color: var(--tertiary-color);
+  color:var(--tertiary-color);
+  background-color: var(--backgroundT-color);
+}
+
 
 .grid-container{
     margin-top: 3em;
@@ -540,6 +628,27 @@ footer p{
 
 }
 
+@media (max-width: 770px) {
+  /* Stack the two sections vertically */
+   .skills {
+    display: flex !important;
+    flex-wrap: wrap;   
+    flex-direction: column !important; /* stack vertically */
+    align-items: left !important;
+    justify-content: left !important;
+    gap: 2rem !important; /* spacing between Tools and Development */
+    width: 100% !important;
+  }
+
+  /* Hide the pseudo-element divider */
+  .skills::before {
+    display: none !important;
+  }
+}
+
+
+
+
 @media(max-width: 530px){
     nav li{
         display: none;
@@ -577,4 +686,5 @@ footer p{
         /*grid-template-columns: 1fr;
         max-width: 320px;*/
     }
+
 }
