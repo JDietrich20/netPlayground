@@ -629,18 +629,18 @@ footer p{
 }
 
 @media (max-width: 770px) {
-  /* Stack the two sections vertically */
+  
    .skills {
     display: flex !important;
     flex-wrap: wrap;   
-    flex-direction: column !important; /* stack vertically */
+    flex-direction: column !important;
     align-items: left !important;
     justify-content: left !important;
-    gap: 2rem !important; /* spacing between Tools and Development */
+    gap: 2rem !important; 
     width: 100% !important;
   }
 
-  /* Hide the pseudo-element divider */
+  
   .skills::before {
     display: none !important;
   }
