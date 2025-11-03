@@ -62,7 +62,7 @@ const projects = [
     category: "Computer Graphics",
     categorySort: ["tech"],
     description:
-      "I am combining <strong>self-directed learning</strong> with a computer graphics course by building a <strong>ray tracer in C++</strong> using <em>Ray Tracing in One Weekend</em> and other tutorials. I plan to also explore <strong>ray casting</strong>, <strong>marching cubes</strong>, and other <strong>3D graphics experiments</strong> to strengthen my skills in <strong>rendering and shading techniques</strong>, <strong>C++</strong>, and <strong>linear algebra</strong>!",
+      "Combining <strong>self-directed learning</strong> with a computer graphics course by building a <strong>ray tracer in C++</strong> using <em>Ray Tracing in One Weekend</em> and other tutorials. I plan to also explore <strong>ray casting</strong>, <strong>marching cubes</strong>, and other <strong>3D graphics experiments</strong> to strengthen my skills in <strong>rendering and shading techniques</strong>, <strong>C++</strong>, and <strong>linear algebra</strong>!",
     status: "Ongoing",
     tools: [" C++ ", " Python ", " WebGL ", " Three.js "],
   },
