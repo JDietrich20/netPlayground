@@ -5,6 +5,7 @@ const projects = [
     date: "September 2025 — Present",
     thumbnail: "images/RAI.png",
     category: "Design/Software Development",
+    categorySort: ["tech", "design"],
     description:
       "Leading the <strong>design</strong>, <strong>development</strong>, and <strong>implementation</strong> of interactive visualizations to communicate AI research findings effectively to visitors at Santa Clara University.",
     status: "In Progress",
@@ -15,7 +16,8 @@ const projects = [
     title: "Robotic Service Animal Design",
     date: "September 2025 — Present",
     thumbnail: "images/RSA.png",
-    category: "Design",
+    category: "Character Design",
+    categorySort: ["art", "design"],
     description:
       "Designing assistive robotic service animals with a focus on <strong>functionality</strong>, <strong>user experience</strong>, and <strong> user interaction</strong>, enhancing accessibility and usability for end-users.",
     status: "In Progress",
@@ -27,6 +29,7 @@ const projects = [
     date: "April 2020 — Present",
     thumbnail: "images/FAU.PNG",
     category: "Art",
+    categorySort: ["art"],
     description:
       "Creating an ongoing fancomic series featuring original artwork and <strong>storytelling</strong>, shared with an online community to engage and inspire readers.",
     status: "Ongoing",
@@ -38,6 +41,7 @@ const projects = [
     date: "September 2025 — October 2025",
     thumbnail: "images/GenAiBias.png",
     category: "Web Development",
+    categorySort: ["tech"],
     description:
       "Developed an interactive dashboard to visualize bias in AI models with <strong>React + Vite</strong>, <strong>HTML</strong>, <strong>JavaScript</strong>, and <strong>Plotly.js</strong>. Provided researchers with clear metrics for fairness and equity assessment. <strong>Showcased at BayLearn 2025</strong>. ",
     status: "Completed",
@@ -56,6 +60,7 @@ const projects = [
     date: "September 2025 — Present",
     thumbnail: "images/RayTrace.png",
     category: "Computer Graphics",
+    categorySort: ["tech"],
     description:
       "I am combining <strong>self-directed learning</strong> with a computer graphics course by building a <strong>ray tracer in C++</strong> using <em>Ray Tracing in One Weekend</em> and other tutorials. I plan to also explore <strong>ray casting</strong>, <strong>marching cubes</strong>, and other <strong>3D graphics experiments</strong> to strengthen my skills in <strong>rendering and shading techniques</strong>, <strong>C++</strong>, and <strong>linear algebra</strong>!",
     status: "Ongoing",
@@ -67,6 +72,7 @@ const projects = [
     date: "September 2025 — Present",
     thumbnail: "images/TwoDee.png",
     category: "3D Modeling",
+    categorySort: ["3Dmodeling", "art"],
     description:
       "Transforming 2D character concepts into fully textured 3D models with <strong>Nomad Sculpt</strong> and <strong>Procreate</strong> while maintaining artistic integrity and production-ready quality.",
     status: "Ongoing",
@@ -78,6 +84,7 @@ const projects = [
     date: "May 2025 — July 2025",
     thumbnail: "images/KoonsRuins.png",
     category: "3D Modeling",
+    categorySort: ["3Dmodeling"],
     description:
       "Designed and rendered a photorealistic 3D environment using <strong>Cinema 4D</strong> and <strong>Octane</strong>, translating artistic concepts into immersive visual experiences.",
     status: "Completed",
@@ -89,6 +96,7 @@ const projects = [
     date: "March 2025 — June 2025",
     thumbnail: "images/OnlineBook.png",
     category: "Software Development",
+    categorySort: ["tech"],
     description:
       "Worked in a small team to develop a <strong>graphical user interface</strong> for an online bookstore in <strong>C++</strong> and <strong>Qt</strong>. Using the MVC architecture, we seamlessly enabled users and admins to browse, purchase, and manage books from a bookstore's database.",
     status: "Completed",
@@ -100,6 +108,7 @@ const projects = [
     date: "March 2025 — June 2025",
     thumbnail: "images/Balance.webp",
     category: "UX/UI Design",
+    categorySort: ["design"],
     description:
       "Worked in a small team to design a mobile application to support healthy habits and burnout management through <strong>UX research</strong>, prototyping in <strong>Figma</strong>, and usability testing.",
     status: "Completed",
@@ -111,6 +120,7 @@ const projects = [
     date: "January 2025 — May 2025",
     thumbnail: "images/Salesforce.png",
     category: "3D Modeling",
+    categorySort: ["3Dmodeling"],
     description:
       "Produced a 3D animated scene displayed on Salesforce Tower, collaborating with an artist to accurately translate her vision using <strong>Cinema 4D</strong> and <strong>After Effects</strong>.",
     status: "Completed",
@@ -122,6 +132,7 @@ const projects = [
     date: "September 2024 — December 2024",
     thumbnail: "images/PeerTap.png",
     category: "Mobile App Development",
+    categorySort: ["tech", "design"],
     description:
       "Worked in a small team to develop a <strong>Flutter-based</strong> mobile application for digital business card exchange. Lead the integration of the front-end, implementing interactive UI/UX and animated branding elements created with <strong>After Effects</strong>, <strong>Adobe Illustrator</strong> and <strong>Lottie</strong>.",
     status: "Completed",
@@ -139,6 +150,7 @@ const projects = [
     date: "March 2024 — June 2024",
     thumbnail: "images/Robot.png",
     category: "3D Modeling",
+    categorySort: ["3Dmodeling"],
     description:
       "Designed and prototyped robot models with <strong>Cinema 4D</strong> as part of a 3D Modeling and Animation course, emphasizing functional and aesthetic design.",
     status: "Completed",
@@ -150,6 +162,7 @@ const projects = [
     date: "March 2024 — April 2024",
     thumbnail: "images/MultiModalApp.png",
     category: "Mobile App Development",
+    categorySort: ["tech"],
     description:
       "Collaborated with another student developer to build a <strong>Flutter-based</strong> mobile application to analyze multi-modal social media interactions for research purposes, enabling controlled experiments and behavioral data collection.",
     status: "Completed",
@@ -157,80 +170,91 @@ const projects = [
   },
 ];
 
+const categoryButtons = document.querySelectorAll(".category-button");
+
 const container = document.querySelector(".projects-container");
 const modal = document.getElementById("projectModal");
 const modalTitle = document.getElementById("modalTitle");
 const modalImage = document.getElementById("modalImage");
 const modalDescription = document.getElementById("modalDescription");
 const modalLink = document.getElementById("modalLink");
+
 const closeButton = document.querySelector(".close-button");
 
-projects.forEach(
-  ({ url, title, date, category, thumbnail, description, status, tools }) => {
-    const card = document.createElement("div");
-    card.classList.add("card", "clickable-card");
+function renderProjects(projectArray) {
+  container.innerHTML = "";
 
-    const statusClass = status.toLowerCase().replace(/\s+/g, "-");
+  projectArray.forEach(
+    ({
+      url,
+      title,
+      date,
+      category,
+      categorySort,
+      thumbnail,
+      description,
+      status,
+      tools,
+    }) => {
+      const card = document.createElement("div");
+      card.classList.add("card", "clickable-card");
 
-    card.innerHTML = `
-    <div class="category">${category}</div>
-    <img src="${thumbnail}" alt="${title}" />
-    <h3 class="title">${title}</h3>
-    <div class="date">${date}</div>
-    <div class="description">${description}</div>
-    <div class="status ${statusClass}">${status}</div>
-  `;
-    card.addEventListener("click", () => {
-      modal.classList.add("show");
-      modalTitle.textContent = title;
-      modalImage.src = thumbnail;
-      modalDescription.innerHTML = tools;
+      const statusClass = status.toLowerCase().replace(/\s+/g, "-");
 
-      if (!url || url === "#" || url.trim() === "") {
-        modalLink.textContent = "Coming Soon";
-        modalLink.removeAttribute("href");
-        modalLink.classList.add("disabled-link");
-      } else {
-        modalLink.textContent = "View Project";
-        modalLink.href = url;
-        modalLink.classList.remove("disabled-link");
-      }
-    });
+      card.innerHTML = `
+        <div class="category">${category}</div>
+        <img src="${thumbnail}" alt="${title}" />
+        <h3 class="title">${title}</h3>
+        <div class="date">${date}</div>
+        <div class="description">${description}</div>
+        <div class="status ${statusClass}">${status}</div>
+      `;
 
-    container.appendChild(card);
-  }
-);
+      card.addEventListener("click", () => {
+        modal.classList.add("show");
+        modalTitle.textContent = title;
+        modalImage.src = thumbnail;
+        modalDescription.innerHTML = tools;
 
-closeButton.addEventListener("click", () => {
-  modal.classList.remove("show");
+        if (!url || url === "#" || url.trim() === "") {
+          modalLink.textContent = "Coming Soon";
+          modalLink.removeAttribute("href");
+          modalLink.classList.add("disabled-link");
+        } else {
+          modalLink.textContent = "View Project";
+          modalLink.href = url;
+          modalLink.classList.remove("disabled-link");
+        }
+      });
+
+      container.appendChild(card);
+    }
+  );
+}
+
+categoryButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    categoryButtons.forEach((btn) => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    const selectedCategory = button.dataset.category.toLowerCase();
+
+    const filteredProjects =
+      selectedCategory === "all"
+        ? projects
+        : projects.filter((project) =>
+            project.categorySort.some(
+              (cat) => cat.toLowerCase() === selectedCategory
+            )
+          );
+
+    renderProjects(filteredProjects);
+  });
 });
 
+closeButton.addEventListener("click", () => modal.classList.remove("show"));
 window.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.classList.remove("show");
-  }
+  if (e.target === modal) modal.classList.remove("show");
 });
 
-// const container = document.querySelector(".projects-container");
-
-// projects.forEach(
-//   ({ url, title, date, category, thumbnail, description, status }) => {
-//     const card = document.createElement("div");
-//     card.classList.add("card", "clickable-card");
-
-//     // Determine status class
-//     const statusClass = status.toLowerCase().replace(/\s+/g, "-"); // "Completed" -> "completed"
-
-//     card.innerHTML = `
-//       <div class="category">${category}</div>
-//       <img src="${thumbnail}" alt="${title}" />
-//       <h3 class="title">${title}</h3>
-//       <div class="date">${date}</div>
-//       <div class="description">${description}</div>
-//       <div class="status ${statusClass}">${status}</div>
-//       <a href="${url}" target="_blank" class="clickable-link"></a>
-//     `;
-
-//     container.appendChild(card);
-//   }
-// );
+renderProjects(projects);
