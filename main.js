@@ -55,6 +55,31 @@ const projects = [
     ],
   },
   {
+    url: "https://github.com/JDietrich20/FaceMeshRenderer",
+    title: "Face Mesh Reconstruction",
+    date: "October 2025",
+    thumbnail: "images/FaceMesh.png",
+    category: "Computer Graphics",
+    categorySort: ["tech"],
+    description:
+      "A lightweight OpenGL renderer for visualizing and experimenting with 3D face mesh data (.txt, .data). Built in C++ and designed for real-time rendering with simple interactive controls.",
+    status: "Completed",
+    tools: ["C++", "OpenGL"],
+  },
+  {
+    url: "https://github.com/JDietrich20/RayCasting",
+    title: "Raycasting with Python",
+    date: "November 2025",
+    thumbnail: "images/Hw3_RAYCAST_RESULT.png",
+    category: "Computer Graphics",
+    categorySort: ["tech"],
+    description:
+      "A Python-based raycasting engine that simulates light projection and surface intersection in 2D and 3D scenes. Includes visualization of rays, hit detection, and rendering logic for educational and experimental purposes.",
+    status: "Ongoing",
+    tools: ["Python"],
+  },
+
+  {
     url: "https://github.com/JDietrich20/RayTracing",
     title: "Explorations in Computer Graphics",
     date: "September 2025 — Present",
