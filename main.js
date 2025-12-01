@@ -62,20 +62,20 @@ const projects = [
     category: "Computer Graphics",
     categorySort: ["tech"],
     description:
-      "A lightweight OpenGL renderer for visualizing and experimenting with 3D face mesh data (.txt, .data). Built in C++ and designed for real-time rendering with simple interactive controls.",
+      "A lightweight <strong>OpenGL</strong> renderer for visualizing and experimenting with <strong>3D face mesh indices and vertices (.txt, .data)</strong>. Built in <strong>C++</strong> and designed for real-time rendering with keyboard controls.",
     status: "Completed",
     tools: ["C++", "OpenGL"],
   },
   {
     url: "https://github.com/JDietrich20/RayCasting",
-    title: "Raycasting with Python",
+    title: "Python based Raycaster",
     date: "November 2025",
     thumbnail: "images/Hw3_RAYCAST_RESULT.png",
     category: "Computer Graphics",
     categorySort: ["tech"],
     description:
-      "A Python-based raycasting engine that simulates light projection and surface intersection in 2D and 3D scenes. Includes visualization of rays, hit detection, and rendering logic for educational and experimental purposes.",
-    status: "Ongoing",
+      "A raycasting engine built with <strong>python</strong> that  simulates light projection and surface intersection in 2D and 3D scenes. Includes <strong>anti-aliasing</strong>, <strong>texture mapping</strong>, and extended ray tracing functionality like <strong>reflections</strong> and <strong>refractions</strong>.",
+    status: "In Progress",
     tools: ["Python"],
   },
 
