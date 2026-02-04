@@ -351,6 +351,14 @@ button {
     margin: 20px auto;
     padding: 0 16px;
   }
+
+.projects-container img {
+  filter: grayscale(100%) sepia(30%) hue-rotate(310deg) saturate(220%) brightness(1.2);
+}
+
+.projects-container img:hover {
+  filter: none;
+}
   
   .clickable-card {
     position: relative;
@@ -686,5 +694,6 @@ footer p{
         /*grid-template-columns: 1fr;
         max-width: 320px;*/
     }
+    
 
 }

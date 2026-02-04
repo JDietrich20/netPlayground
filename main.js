@@ -1,27 +1,40 @@
 const projects = [
   {
     url: "#",
-    title: "Responsible AI Hub Product Design",
+    title: "Visualization Dashboard for the Responsible AI Hub",
     date: "September 2025 — Present",
     thumbnail: "images/RAI.png",
     category: "Design/Software Development",
     categorySort: ["tech", "design"],
     description:
-      "Leading the <strong>design</strong>, <strong>development</strong>, and <strong>implementation</strong> of interactive visualizations to communicate AI research findings effectively to visitors at Santa Clara University.",
+      "Leading the <strong>design</strong>, <strong>development</strong>, and <strong>implementation</strong> of interactive visualizations to communicate research findings effectively to visitors at Santa Clara University.",
     status: "In Progress",
-    tools: [" (Tech Stack TBD) ", " Figma ", " Procreate "],
+    tools: [" (Tech Stack TBD) ", " Figma "],
+  },
+
+  {
+    url: "https://github.com/JDietrich20/RayCasting",
+    title: "Python based Raycaster",
+    date: "November 2025",
+    thumbnail: "images/Hw3_RAYCAST_RESULT.png",
+    category: "Computer Graphics",
+    categorySort: ["tech"],
+    description:
+      "A raycasting engine built with <strong>python</strong> that  simulates light projection and surface intersection in 2D and 3D scenes. Includes <strong>anti-aliasing</strong>, <strong>texture mapping</strong>, and extended ray tracing functionality like <strong>reflections</strong> and <strong>refractions</strong>.",
+    status: "In Progress",
+    tools: ["Python"],
   },
   {
     url: "#",
     title: "Robotic Service Animal Design",
     date: "September 2025 — Present",
     thumbnail: "images/RSA.png",
-    category: "Character Design",
-    categorySort: ["art", "design"],
+    category: "3D Modeling/ Character Design",
+    categorySort: ["3DModeling", "design", "art"],
     description:
       "Designing assistive robotic service animals with a focus on <strong>functionality</strong>, <strong>user experience</strong>, and <strong> user interaction</strong>, enhancing accessibility and usability for end-users.",
     status: "In Progress",
-    tools: [" Procreate ", "Cinema4D"],
+    tools: [" Procreate ", "Cinema4D", "Nomad Sculpt"],
   },
   {
     url: "https://fractureau.carrd.co/#contact",
@@ -36,8 +49,20 @@ const projects = [
     tools: [" Procreate ", " Adobe Illustrator ", " Adobe After Effects "],
   },
   {
+    url: "#",
+    title: "Grapes: An Aesop's Fable Adaptation",
+    date: "January 2026",
+    thumbnail: "images/Grapes.png",
+    category: "Storyboarding",
+    categorySort: ["art"],
+    description:
+      "Creating a modern adaptation of Aesop's fable 'The Fox and the Grapes' and 'The Fox and the Crow' through detailed <strong>storyboarding</strong> and <strong>illustration</strong> using <strong>Procreate</strong> to convey themes of kindness and sharing.",
+    status: "Completed",
+    tools: [" Procreate "],
+  },
+  {
     url: "https://github.com/JDietrich20/GenAiBias_Viz",
-    title: "GenAI Bias Visualization Dashboard",
+    title: "Visualization Dashboard for BayLearn 2025",
     date: "September 2025 — October 2025",
     thumbnail: "images/GenAiBias.png",
     category: "Web Development",
@@ -66,19 +91,6 @@ const projects = [
     status: "Completed",
     tools: ["C++", "OpenGL"],
   },
-  {
-    url: "https://github.com/JDietrich20/RayCasting",
-    title: "Python based Raycaster",
-    date: "November 2025",
-    thumbnail: "images/Hw3_RAYCAST_RESULT.png",
-    category: "Computer Graphics",
-    categorySort: ["tech"],
-    description:
-      "A raycasting engine built with <strong>python</strong> that  simulates light projection and surface intersection in 2D and 3D scenes. Includes <strong>anti-aliasing</strong>, <strong>texture mapping</strong>, and extended ray tracing functionality like <strong>reflections</strong> and <strong>refractions</strong>.",
-    status: "In Progress",
-    tools: ["Python"],
-  },
-
   {
     url: "https://github.com/JDietrich20/RayTracing",
     title: "Explorations in Computer Graphics",
@@ -253,7 +265,7 @@ function renderProjects(projectArray) {
       });
 
       container.appendChild(card);
-    }
+    },
   );
 }
 
@@ -269,8 +281,8 @@ categoryButtons.forEach((button) => {
         ? projects
         : projects.filter((project) =>
             project.categorySort.some(
-              (cat) => cat.toLowerCase() === selectedCategory
-            )
+              (cat) => cat.toLowerCase() === selectedCategory,
+            ),
           );
 
     renderProjects(filteredProjects);
