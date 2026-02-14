@@ -1,3 +1,17 @@
+const themeSwitch = document.querySelector(".theme-switch");
+
+if (localStorage.getItem("darkmode") === "true") {
+  document.body.classList.add("darkmode");
+}
+
+themeSwitch.addEventListener("click", () => {
+  document.body.classList.toggle("darkmode");
+  localStorage.setItem(
+    "darkmode",
+    document.body.classList.contains("darkmode"),
+  );
+});
+
 const projects = [
   {
     url: "#",
